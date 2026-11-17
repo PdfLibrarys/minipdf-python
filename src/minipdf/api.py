@@ -4,7 +4,7 @@ import importlib
 import os
 from pathlib import Path
 from threading import RLock
-from typing import Any
+from typing import TYPE_CHECKING
 
 from .docx import convert_docx
 from .errors import MiniPdfError, UnsupportedFormatError
@@ -13,10 +13,13 @@ from .options import ConversionOptions
 from .pptx import convert_pptx
 from .xlsx import convert_xlsx
 
-try:
-    _native: Any = importlib.import_module("minipdf._native")
-except ImportError:
-    _native = None
+if TYPE_CHECKING:
+    from . import _native
+else:
+    try:
+        _native = importlib.import_module("minipdf._native")
+    except ImportError:
+        _native = None
 
 PathLike = str | os.PathLike[str]
 _font_lock = RLock()

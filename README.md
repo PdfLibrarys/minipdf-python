@@ -25,10 +25,10 @@ pip install .
 To rebuild only the extension into the package source tree, use PowerShell:
 
 ```powershell
-scripts/Build-Python-Native.ps1
+pip install -e ".[dev]"
 ```
 
-The visual benchmark runner builds the extension automatically.
+Run ``pytest tests``, ``ruff check src tests``, ``ruff format --check src tests``, and ``mypy src tests`` after building.
 
 ## Install
 
@@ -64,3 +64,16 @@ uses PDF built-in Latin fonts. Tables, images, embedded fonts, CJK/RTL shaping,
 headers, footers, and lists are not yet supported. XLSX rendering currently
 extracts common cell value types into text rows, while PPTX rendering extracts
 paragraph text and preserves slide page dimensions and boundaries.
+
+## Repository migration
+
+This implementation now lives in [https://github.com/PdfLibrarys/minipdf-python](https://github.com/PdfLibrarys/minipdf-python). Its language-specific
+Git history was preserved from [MiniPdf](https://github.com/mini-software/MiniPdf)
+(source commit `862ab485fdf8c5b3d3ec76afb6145f4ff68bf987`).
+The original repository maintains the .NET implementation. Open issues and
+pull requests for this implementation in this repository.
+
+The native engine is fetched from [minipdf-rs](https://github.com/PdfLibrarys/minipdf-rs)
+using an immutable Git revision in the Cargo manifest. No sibling checkout is
+required. Updating the engine requires changing that revision and regenerating
+the Cargo lockfile.

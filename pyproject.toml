@@ -36,8 +36,8 @@ dev = [
 minipdf = "minipdf.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/mini-software/MiniPdf"
-Repository = "https://github.com/mini-software/MiniPdf"
+Homepage = "https://github.com/PdfLibrarys/minipdf-python"
+Repository = "https://github.com/PdfLibrarys/minipdf-python"
 
 [tool.maturin]
 manifest-path = "native/Cargo.toml"

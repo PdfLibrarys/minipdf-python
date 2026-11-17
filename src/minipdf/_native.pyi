@@ -1,5 +1,5 @@
 # Type stub for the optional native extension `minipdf._native`, built from
-# `minipdf-python/native`. At runtime the module is imported dynamically and
+# `native/`. At runtime the module is imported dynamically and
 # is absent unless the extension has been built and installed.
 
 def convert_bytes_to_pdf(

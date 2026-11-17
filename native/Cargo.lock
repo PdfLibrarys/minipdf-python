@@ -355,6 +355,7 @@ dependencies = [
 [[package]]
 name = "minipdf"
 version = "0.7.0"
+source = "git+https://github.com/PdfLibrarys/minipdf-rs.git?rev=c2ec4ff992ffb2ba7139f6a70dee0888bf90946f#c2ec4ff992ffb2ba7139f6a70dee0888bf90946f"
 dependencies = [
  "chrono",
  "flate2",
