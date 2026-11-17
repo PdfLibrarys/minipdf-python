@@ -1,5 +1,7 @@
 # MiniPdf for Python
 
+[English](README.md) | [zh-CN](docs/README.zh-CN.md) | [zh-TW](docs/README.zh-TW.md) | [ja](docs/README.ja.md) | [ko](docs/README.ko.md) | [it](docs/README.it.md) | [fr](docs/README.fr.md)
+
 MiniPdf converts basic DOCX, XLSX, and PPTX content to PDF 1.4 without
 requiring Microsoft Office or LibreOffice. Conversion runs through the Rust
 MiniPdf engine in `minipdf-rs` via the PyO3 extension `minipdf._native`, which
@@ -77,3 +79,8 @@ The native engine is fetched from [minipdf-rs](https://github.com/PdfLibrarys/mi
 using an immutable Git revision in the Cargo manifest. No sibling checkout is
 required. Updating the engine requires changing that revision and regenerating
 the Cargo lockfile.
+
+## Visual results
+
+- [XLSX](https://mini-software.github.io/minipdf-web-page/?language=python&suite=issue&format=xlsx)
+- [DOCX](https://mini-software.github.io/minipdf-web-page/?language=python&suite=issue&format=docx)
